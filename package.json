@@ -1,0 +1,44 @@
+{
+  "name": "sl-realtime",
+  "version": "0.0.0",
+  "main": "lib/index.js",
+  "description": "Wrapper for Storstockholms Lokaltrafiks (SL) realtime API",
+  "homepage": "https://github.com//sl-wrapper",
+  "bugs": "https://github.com//sl-wrapper/issues",
+  "author": {
+    "name": "Simon Johansson",
+    "email": "mail@simon-johansson.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com//sl-wrapper"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "devDependencies": {
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-coffee": "~0.9.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-coffeelint": "~0.0.8",
+    "grunt-simple-mocha": "~0.4.0",
+    "grunt": "~0.4.2",
+    "grunt-release": "^0.11.0",
+    "grunt-coveralls": "^1.0.0",
+    "istanbul": "^0.3.7",
+    "load-grunt-tasks": "^3.1.0",
+    "grunt-mocha-cli": "^1.12.0",
+    "chai": "^2.1.1",
+    "lodash": "^3.5.0",
+    "mocha": "^2.2.1"
+  },
+  "dependencies": {
+    "request": "^2.53.0"
+  },
+  "scripts": {
+    "test": "grunt test",
+    "travis": "node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+  }
+}
