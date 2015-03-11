@@ -1,31 +1,27 @@
 
 SL = require './src/lib/index.coffee'
 
-config =
-  key: '93d670b5a250442baca4896869e40949' #required
-  format: 'json' #json or xml - defaults to json
-  # debug: true #generates meta object with StatusCode, Message, ExecutionTime, LatestUpdate & DataAge - defaults to false
+keys =
+  realtimeInformation: '93d670b5a250442baca4896869e40949'
+  locationLookup: '7e219fc7f11340ff8a02ec6e1957765c'
+  tripPlanner: 'f88b2c8432ea4a259fc831966a4e6262'
 
-sl = new SL config
+sl = new SL keys
 
-realtimeOptions =
-  siteid: 9507
-  timewindow: 0 #0-60 - defaults to 0
-
-sl.realtimeInformation realtimeOptions, (err, response) ->
+clb = (err, res) ->
   if err then throw new Error err
-  console.log response
+  console.log res
 
-locationOptions =
-  searchstring: ""
-  stationsonly: true #defaults to true
-  maxresults: 10 ##defaults to 10, max 50
-
-sl.locationLookup locationOptions, (err, response) ->
+tripClb = (err, res) ->
   if err then throw new Error err
-  console.log response
+  console.log res.TripList.Trip[0].LegList.Leg[0]
 
-# sl.getDepartures {site_id: 9507, transport_mode: 'train'}, (err, response) ->
-#   if err then throw new Error err
-#   console.log response
+# sl.realtimeInformation.get {siteid: 'werwfsdf'}, clb
+# sl.realtimeInformation.get {siteid: 9507}, clb
+# sl.locationLookup.get {}, clb
+# sl.locationLookup.get {searchstring: "rådmansgatan"}, clb
+# sl.tripPlanner.trip {originId: 9118, destId: 66666666}, clb
+# sl.tripPlanner.trip {originId: 9118, destId: 9507}, tripClb
+# sl.tripPlanner.journeyDetail {}, clb
+# sl.tripPlanner.geometry {}, clb
 

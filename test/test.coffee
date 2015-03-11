@@ -1,6 +1,9 @@
-'use strict'
 
-sl = require '../lib/sl-wrapper.js'
+{expect} = require('chai')
+
+console.log expect
+
+SL = require '../src/lib/index.coffee'
 
 ###
 ======== A Handy Little Mocha Reference ========
@@ -52,9 +55,14 @@ Should assertions:
   user.should.be.a('object').and.have.property('name', 'tj')
 ###
 
-describe 'Awesome', ()->
-  describe '#of()', ()->
+workingKeys =
+  realtimeInformation: '93d670b5a250442baca4896869e40949'
+  locationLookup: '7e219fc7f11340ff8a02ec6e1957765c'
+  tripPlanner: 'f88b2c8432ea4a259fc831966a4e6262'
 
-    it 'awesome', ()->
-      sl.awesome().should.eql('awesome')
+describe 'SL', ()->
+
+  it "should be able to create SL object", ->
+    expect(-> new SL ).to.not.throw Error
+
 

@@ -1,22 +1,25 @@
+
 qs      = require 'querystring'
+_       = require 'lodash'
 request = require 'request'
 
 baseUrl = "http://api.sl.se/api2/"
 
 module.exports =
 
-  realtimeUrl: (format, options) ->
-    "#{baseUrl}realtimedepartures.#{format}?#{qs.stringify options}"
-
-  locationUrl: (format, options) ->
-    "#{baseUrl}typeahead.#{format}?#{qs.stringify options}"
+  createUrl: (options = {}, action) ->
+    "#{baseUrl}#{action}.json?#{qs.stringify options}"
 
   # Send requests
-  get: (url, fn) ->
+  fetch: (url, fn = ->) ->
     options = { url, json: true }
-
     request options, (err, response, body) ->
-      if not err and body.StatusCode isnt 0
-        err = "#{body.StatusCode} #{body.Message}"
+      return fn.call body, err, body if err?
+      if _.intersection(_.keysIn(body), ['TripList', 'JourneyDetail', 'Geometry']).length > 0
+        method = _.keys(body)[0]
+        err = "#{body[method].errorCode} #{body[method].errorText}" if body[method].errorCode?
+        fn.call body, err, body
+      else
+        err = "#{body.StatusCode} #{body.Message}" if body.StatusCode isnt 0
+        fn.call body, err, body.ResponseData
 
-      fn.call body, err, body.ResponseData if fn?

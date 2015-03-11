@@ -1,26 +1,24 @@
 
-_       = require 'lodash'
-request = require './request'
+_ = require 'lodash'
+
+RealtimeInformation = require './realtime'
+LocationLookup      = require './location'
+TripPlanner         = require './trip'
+
+correctKeysSupplied = (keys) ->
+  possibleKeys = ['realtimeInformation', 'locationLookup', 'tripPlanner']
+  _.intersection(_.keysIn(keys), possibleKeys).length > 0
 
 class SL
-  constructor: (config) ->
-    unless config.key then throw new Error('API key required')
-    @format = config.format or 'json'
+  constructor: (@keys) ->
+    unless keys? or correctKeysSupplied keys
+      throw new Error 'At least one API key is required'
+    @createServices keys
 
-  realtimeInformation: (options, fn) ->
-    if _.isFunction(options)
-      [fn, options] = [options, null]
-
-    url = request.realtimeUrl @format, options
-
-    request.get url, fn
-
-  locationLookup: (options, fn) ->
-    if _.isFunction(options)
-      [fn, options] = [options, null]
-
-    url = request.locationUrl @format, options
-
-    request.get url, fn
+  createServices: (keys) ->
+    @realtimeInformation = new RealtimeInformation keys.realtimeInformation
+    @locationLookup = new LocationLookup keys.locationLookup
+    @tripPlanner = new TripPlanner keys.tripPlanner
 
 module.exports = SL
+
