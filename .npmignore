@@ -2,23 +2,18 @@
 /coverage/
 
 .travis*
-Changelog.md
 Gruntfile.coffee
 Gruntfile.js
 
 src/
-/out/bin/
-/out/docs/
-/out/test/
 
 .git/
 .gitignore
 .gitattributes
 .DS_Store
 .jshintrc
-.idea/
+coffeelint.json
 
 *.sublime-project
 *.sublime-workspace
 todo.md
-
