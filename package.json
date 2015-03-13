@@ -33,10 +33,17 @@
     "chai": "^2.1.1",
     "lodash": "^3.5.0",
     "mocha": "^2.2.1",
-    "grunt-cli": "^0.1.13"
+    "grunt-cli": "^0.1.13",
+    "grunt-mocha-test": "^0.12.7",
+    "coffee-script": "^1.9.1"
   },
   "dependencies": {
-    "request": "^2.53.0"
+    "request": "^2.53.0",
+    "utf8": "^2.1.0",
+    "iconv": "^2.1.6",
+    "xml2js": "^0.4.5",
+    "deep-pick": "^0.1.0",
+    "underscore.object.plus": "^1.0.0"
   },
   "scripts": {
     "test": "grunt test",
