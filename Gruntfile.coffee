@@ -21,37 +21,30 @@ module.exports = (grunt)->
       test:
         src: '<%= watch.test.files %>'
       options:
-        no_trailing_whitespace:
-          level: 'error'
-        max_line_length:
-          level: 'warn'
+        configFile: 'coffeelint.json'
 
     coffee:
       lib:
         expand: true
-        cwd: 'src/lib/'
+        cwd: 'src/'
         src: ['**/*.coffee']
-        dest: 'dist/lib/'
+        dest: 'dist/'
         ext: '.js'
-      test:
-        expand: true
-        cwd: 'src/test/'
-        src: ['**/*.coffee']
-        dest: 'dist/test/'
-        ext: '.js'
+      # test:
+      #   expand: true
+      #   cwd: 'src/test/'
+      #   src: ['**/*.coffee']
+      #   dest: 'dist/test/'
+      #   ext: '.js'
 
-    simplemocha:
-      all:
-        src: [
-          'node_modules/should/should.js'
-          'dist/test/**/*.js'
-        ]
+    mochaTest:
+      test:
         options:
-          globals: ['should']
-          timeout: 3000
-          ignoreLeaks: false
-          ui: 'bdd'
+          require: 'coffee-script/register'
           reporter: 'spec'
+        src: [
+          'test/**/*.coffee'
+        ]
 
     watch:
       options:
@@ -60,11 +53,11 @@ module.exports = (grunt)->
         files: 'Gruntfile.coffee'
         tasks: ['coffeelint:gruntfile']
       lib:
-        files: ['src/lib/**/*.coffee']
-        tasks: ['coffeelint:lib', 'coffee:lib', 'simplemocha']
+        files: ['src/**/*.coffee']
+        tasks: ['coffeelint:lib', 'coffee:lib', 'mochaTest']
       test:
-        files: ['src/test/**/*.coffee']
-        tasks: ['coffeelint:test', 'coffee:test', 'simplemocha']
+        files: ['test/**/*.coffee']
+        tasks: ['coffeelint:test', 'mochaTest']
 
     clean: ['dist/']
 
@@ -89,7 +82,7 @@ module.exports = (grunt)->
   ]
 
   grunt.registerTask 'test', [
-    'simplemocha'
+    'mochaTest'
   ]
 
   grunt.registerTask 'default', [
