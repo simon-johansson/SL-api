@@ -1,9 +1,7 @@
 
 {expect} = require('chai')
 
-console.log expect
-
-SL = require '../src/lib/index.coffee'
+SL = require '../src/index.coffee'
 
 ###
 ======== A Handy Little Mocha Reference ========
@@ -61,8 +59,8 @@ workingKeys =
   tripPlanner: 'f88b2c8432ea4a259fc831966a4e6262'
 
 describe 'SL', ()->
-
-  it "should be able to create SL object", ->
-    expect(-> new SL ).to.not.throw Error
+  test = new SL()
+  it "should throw Error if keys are not supplied when creating new object", ->
+    expect( -> new SL() ).to.throw "Error"
 
 
