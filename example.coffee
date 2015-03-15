@@ -8,7 +8,7 @@ keys =
   trafficSituation: '9c2ba7f094694f959eb1648cf39cc6bf'
   disturbanceInformation: '0f1ddd492759449ab3218af8c6438d40'
 
-sl = new SL keys
+sl = new SL keys, 'xml'
 
 clb = (err, res) ->
   if err then throw new Error err
@@ -16,20 +16,32 @@ clb = (err, res) ->
 
 tripClb = (err, res) ->
   if err then throw new Error err
-  console.log res
+  # console.log res
   # console.log res.TripList.Trip[0].LegList.Leg[0]
 
+# sl.realtimeInformation({siteid: "9507"})
+#   .then(console.log)
+#   .fail(console.error)
+#   .done()
+
+# sl.locationLookup({searchstring: "tegnergatan"})
+#   .then (res) ->
+#     sl.realtimeInformation({siteid: res[0].SiteId})
+#   .then (res) ->
+#     console.log res.Buses
+#   .fail console.error
+#   .done()
+
 # console.log sl.realtimeInformation
-# sl.realtimeInformation {siteid: 9507}, clb
+sl.realtimeInformation {siteid: 9507}, clb
 # sl.realtimeInformation {siteid: 'werwfsdf'}, clb
 # sl.locationLookup {}, clb
 # sl.locationLookup {searchstring: "rådmansgatan"}, clb
 
-# sl.realtimeInformation.get {siteid: 9507}, clb
 # sl.disturbanceInformation.deviations {transportMode: "metro"}, clb
 # sl.disturbanceInformation.deviations clb
 # sl.disturbanceInformation.deviationsRawData clb
-# sl.trafficSituation.get clb
+# sl.trafficSituation clb
 # sl.tripPlanner.trip {originId: 9118, destId: 66666666}, clb
 # sl.tripPlanner.trip {originId: 9118, destId: 9507}, tripClb
 # sl.tripPlanner.journeyDetail {}, clb

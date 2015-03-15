@@ -2,8 +2,10 @@
 Base = require './base'
 
 class LocationLookup extends Base
-  constructor: (@key, @getRaw) ->
+  constructor: (config) ->
+    @key = config.keys.locationLookup
     @service = 'locationLookup (SL Platsuppslag)'
+    super
 
 module.exports = (args...) ->
   service = new LocationLookup args...

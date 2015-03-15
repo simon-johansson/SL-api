@@ -1,39 +1,36 @@
 
-qs      = require 'querystring'
 _       = require 'lodash'
 request = require 'request'
 
-findNested = (obj, key, memo = []) ->
-  for k, val of obj
-    if _.has obj, key
-      memo.push obj[key]
+findNested = (obj, predicate, memo = []) ->
+  for key, val of obj
+    if predicate of obj
+      memo.push obj[predicate]
       break
     else
-      findNested val, key, memo if _.isObject val
-  if memo.length then _.first _.flatten memo else null
+      findNested(val, predicate, memo) if _(val).isObject
+  if memo.length then _.first(_.flatten(memo)) else null
 
 isError = (errorCode) ->
   if errorCode? and errorCode.toString().length > 1 then true else false
 
 createErrorMsg = (body, codeKey, errorKey) ->
   [code, msg] = [findNested(body, codeKey), findNested(body, errorKey)]
-  # console.log code, msg
-  if isError code, msg then "#{code} - #{msg}" else null
+  if isError(code, msg) then "#{code} - #{msg}" else null
 
 parseResponse = (body) ->
   body = JSON.parse body
-  if body['StatusCode']?
-    # console.log 'creating StatusCode'
-    [err, data] = [createErrorMsg(body, 'StatusCode', 'Message'), body['ResponseData']]
+  if body.StatusCode?
+    [err, data] = [createErrorMsg(body, 'StatusCode', 'Message'), body.ResponseData]
   else
-    # console.log 'creating errorCode'
     [err, data] = [createErrorMsg(body, 'errorCode', 'errorText'), body]
   [err, data]
 
 module.exports =
 
-  fetch: (url, getRaw, fn) ->
-    request { url, qs: options }, (err, response, body) ->
-      unless err?
-        [err, data] = if getRaw then [null, body] else parseResponse body
-      fn.call body, err, data if fn?
+  fetch: (url, raw, deferred) ->
+    request { url }, (err, response, body) ->
+      unless err or raw
+        [err, body] = parseResponse body
+      if err then deferred.reject err
+      else deferred.resolve body

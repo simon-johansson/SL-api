@@ -2,8 +2,10 @@
 Base = require './base'
 
 class TripPlanner extends Base
-  constructor: (@key, @getRaw) ->
+  constructor: (config) ->
+    @key = config.keys.tripPlanner
     @service = 'tripPlanner (SL Reseplanerare 2)'
+    super
 
 module.exports = (args...) ->
   service = new TripPlanner args...

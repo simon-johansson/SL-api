@@ -2,8 +2,10 @@
 Base = require './base'
 
 class TrafficSituation extends Base
-  constructor: (@key, @getRaw) ->
+  constructor: (config) ->
+    @key = config.keys.trafficSituation
     @service = 'trafficSituation (SL Trafikläget 2)'
+    super
 
 module.exports = (args...) ->
   service = new TrafficSituation args...

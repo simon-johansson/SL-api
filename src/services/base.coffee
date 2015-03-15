@@ -1,40 +1,38 @@
 
+qs      = require 'querystring'
 _       = require 'lodash'
+Q       = require 'q'
 
 request = require '../request'
 errors = require '../errors'
-
-api =
-  protocol: 'http'
-  subdomain: 'api'
-  domain: 'sl.se'
-  basepath: 'api2'
-  format: 'json'
+{ api } = require '../api_config'
 
 checkArgumentOrder = (options, fn) ->
-  if _.isFunction options then [options, {}]
+  if _(options).isFunction() then [options, {}]
   else [fn, options]
 
 class Base
   constructor: (config) ->
-    @getRaw = config.getRaw
+    @format = config.format or 'json'
+    @getRaw = !!config.format
+    @baseURL = "#{api.protocol}://#{api.subdomain}.#{api.domain}/#{api.basepath}/"
 
   # WIP
   setDefaults: (@defaults) ->
 
-  __createUrl: (options = {}, format = api.format, action) ->
-    baseURL = "#{api.protocol}://#{api.subdomain}.#{api.domain}/#{api.basepath}/"
-    "#{baseURL}#{action}.#{format}?#{qs.stringify options}"
+  __createUrl: (options, action) ->
+    "#{@baseURL}#{action}.#{@format}?#{qs.stringify options}"
 
-  __mergeDefaultOptions: (options, self) ->
-    _.defaults options, self.defaults, { @key }
+  __mergeDefaultOptions: (options) ->
+    _.defaults options, @defaults, { @key }
 
   prepareRequest: (action, options, fn) ->
-    if not @key
-      throw new errors.NoKeySuppliedForServiceError @service
+    if not @key then throw new errors.NoKeySuppliedForServiceError @service
+    deferred = Q.defer()
     [fn, options] = checkArgumentOrder options, fn
-    options = __mergeDefaultOptions options
-    url = __createUrl options, @getRaw, action
-    request.fetch url, @getRaw, fn
+    options = @__mergeDefaultOptions options
+    url = @__createUrl options, action
+    request.fetch url, @getRaw, deferred
+    deferred.promise.nodeify fn
 
 module.exports = Base
