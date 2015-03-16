@@ -1,47 +1,46 @@
 
 { availableKeys, availableFormats } = require './api_config'
 
-NoKeySuppliedError = ->
-  self = new Error "You have to supply as least one API key."
-  self.name = 'NoKeySuppliedError'
-  self.__proto__ = NoKeySuppliedError::
-  self
-NoKeySuppliedError::__proto__ = Error::
+exported = {}
 
-InvalidKeyNameSuppliedError = (key) ->
-  self = new Error "The supplied key '#{key}' should be one of \
-                    the following #{availableKeys.join(', ')}"
-  self.name = 'InvalidKeyNameSuppliedError'
-  self.__proto__ = InvalidKeyNameSuppliedError::
-  self
-InvalidKeyNameSuppliedError::__proto__ = Error::
+errors = [
+  {
+    error: 'NoKeySuppliedError'
+    msg: ->
+          "One of the following API keys have to be supplied \
+           upon instantiation: #{availableKeys.join(', ')}."
+  }, {
+    error: 'InvalidKeyNameSuppliedError'
+    msg: (key) ->
+          "The supplied key '#{key}' should be one of \
+          the following #{availableKeys.join(', ')}"
+  }, {
+    error: 'NoKeySuppliedForServiceError'
+    msg: (service) ->
+          "You have not supplied an API key for the #{service} \
+          service which you attempted to use."
+  }, {
+    error: 'InvalidKeyFormatSupplied'
+    msg: ->
+          "The supplied API key(s) has to be an object following the format: \
+          { realtimeInformation: <API key from trafiklab.se> }"
+  }, {
+    error: 'InvalidResponseFormatSuppliedError'
+    msg: (format) ->
+          "'#{format}' which you supplied is not supported. \
+          Use either #{availableFormats.join(', ')} or omit \
+          format completely to get the response as a JavaScript object."
+  }
+]
 
-NoKeySuppliedForServiceError = (service) ->
-  self = new Error "You have not supplied an API key for the #{service} service."
-  self.name = 'NoKeySuppliedForServiceError'
-  self.__proto__ = NoKeySuppliedForServiceError::
-  self
-NoKeySuppliedForServiceError::__proto__ = Error::
+alias = (obj, error) ->
+  obj[error.error] = (arg) ->
+    self = new Error error.msg(arg)
+    self.name = error.error
+    self.__proto__ = obj[error.error]::
+    self
+  obj[error.error]::__proto__ = Error::
 
-InvalidKeyFormatSupplied = (service) ->
-  self = new Error "..."
-  self.name = 'InvalidKeyFormatSupplied'
-  self.__proto__ = InvalidKeyFormatSupplied::
-  self
-InvalidKeyFormatSupplied::__proto__ = Error::
+alias exported, error for error in errors
 
-InvalidResponseFormatSuppliedError = (format) ->
-  self = new Error "#{format} which you supplied is not supported. \
-                    Use either #{availableFormats.join(', ')} or omit \
-                    format completely to get the response as a JavaScript object."
-  self.name = 'InvalidResponseFormatSuppliedError'
-  self.__proto__ = InvalidResponseFormatSuppliedError::
-  self
-InvalidResponseFormatSuppliedError::__proto__ = Error::
-
-module.exports =
-  NoKeySuppliedError: NoKeySuppliedError
-  InvalidKeyNameSuppliedError: InvalidKeyNameSuppliedError
-  NoKeySuppliedForServiceError: NoKeySuppliedForServiceError
-  InvalidResponseFormatSuppliedError: InvalidResponseFormatSuppliedError
-  InvalidKeyFormatSupplied: InvalidKeyFormatSupplied
+module.exports = exported
