@@ -32,7 +32,7 @@ class Base
     [fn, options] = checkArgumentOrder options, fn
     options = @__mergeDefaultOptions options
     url = @__createUrl options, action
-    request.fetch url, @getRaw, deferred
+    request url, @getRaw, deferred
     deferred.promise.nodeify fn
 
 module.exports = Base

@@ -2,7 +2,7 @@
 _ = require 'lodash'
 typeOf = require 'type-of'
 
-errors = require './errors'
+err = require './errors'
 { availableKeys, availableFormats } = require './api_config'
 
 RealtimeInformation    = require './services/realtime'
@@ -12,20 +12,20 @@ TrafficSituation       = require './services/traffic'
 DisturbanceInformation = require './services/disturbance'
 
 checkIfKeyIsSupplied = (keys) ->
-  throw new errors.NoKeySuppliedError unless keys?
+  throw new err.NoKeySuppliedError unless keys?
 
 checkIfKeyIsObject = (keys) ->
   type = typeOf keys
-  unless type is 'object' then throw new error.InvalidKeyFormatSupplied type
+  unless type is 'object' then throw new err.InvalidKeyFormatSupplied type
 
 checkKeyNames = (keys) ->
   for key, val of keys
     if key not in availableKeys
-      throw new errors.InvalidKeyNameSuppliedError key
+      throw new err.InvalidKeyNameSuppliedError key
 
 checkSuppliedFormat = (format) ->
   if format and format.toUpperCase() not in availableFormats
-    throw new errors.InvalidResponseFormatSuppliedError format
+    throw new err.InvalidResponseFormatSuppliedError format
 
 class SL
   constructor: (@keys, @format) ->
