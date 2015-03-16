@@ -1,66 +1,31 @@
 
-{expect} = require('chai')
+{ expect } = require('chai')
 
 SL = require '../src/index.coffee'
 
-###
-======== A Handy Little Mocha Reference ========
-https://github.com/visionmedia/should.js
-https://github.com/visionmedia/mocha
+keys =
+  realtimeInformation: 'xxx'
+  locationLookup: 'xxx'
+  tripPlanner: 'xxx'
+  trafficSituation: 'xxx'
+  disturbanceInformation: 'xxx'
 
-Mocha hooks:
-  before ()-> # before describe
-  after ()-> # after describe
-  beforeEach ()-> # before each it
-  afterEach ()-> # after each it
+describe 'SL (Storstockholms Lokaltrafik) API Wrapper', ()->
 
-Should assertions:
-  should.exist('hello')
-  should.fail('expected an error!')
-  true.should.be.ok
-  true.should.be.true
-  false.should.be.false
+  describe 'new SL()', ()->
+    it "should throw NoKeySuppliedError", ->
+      noKeySupplied = -> new SL()
+      expect( noKeySupplied ).to.throw /One of the following API keys have to be supplied/
 
-  (()-> arguments)(1,2,3).should.be.arguments
-  [1,2,3].should.eql([1,2,3])
-  should.strictEqual(undefined, value)
-  user.age.should.be.within(5, 50)
-  username.should.match(/^\w+$/)
+  describe 'new SL("string")', ()->
+    it "should throw InvalidKeyFormatSuppliedError", ->
+      invalidKeyFormatSupplied = -> new SL("string")
+      expect( invalidKeyFormatSupplied ).to.throw /The supplied API key\(s\) has to be an object/
 
-  user.should.be.a('object')
-  [].should.be.an.instanceOf(Array)
+  describe 'new SL({realtimeInformation: "xxx", wrongKeyName: "xxx"})', ()->
+    it "should throw InvalidKeyNameSuppliedError", ->
+      InvalidKeyNameSupplied = -> new SL({realtimeInformation: "xxx", wrongKeyName: "xxx"})
+      expect( InvalidKeyNameSupplied ).to.throw /The supplied key (.*) should be one of the following/
 
-  user.should.have.property('age', 15)
-
-  user.age.should.be.above(5)
-  user.age.should.be.below(100)
-  user.pets.should.have.length(5)
-
-  res.should.have.status(200) #res.statusCode should be 200
-  res.should.be.json
-  res.should.be.html
-  res.should.have.header('Content-Length', '123')
-
-  [].should.be.empty
-  [1,2,3].should.include(3)
-  'foo bar baz'.should.include('foo')
-  { name: 'TJ', pet: tobi }.user.should.include({ pet: tobi, name: 'TJ' })
-  { foo: 'bar', baz: 'raz' }.should.have.keys('foo', 'bar')
-
-  (()-> throw new Error('failed to baz')).should.throwError(/^fail.+/)
-
-  user.should.have.property('pets').with.lengthOf(4)
-  user.should.be.a('object').and.have.property('name', 'tj')
-###
-
-workingKeys =
-  realtimeInformation: '93d670b5a250442baca4896869e40949'
-  locationLookup: '7e219fc7f11340ff8a02ec6e1957765c'
-  tripPlanner: 'f88b2c8432ea4a259fc831966a4e6262'
-
-describe 'SL', ()->
-  test = new SL()
-  it "should throw Error if keys are not supplied when creating new object", ->
-    expect( -> new SL() ).to.throw "Error"
 
 
