@@ -8,7 +8,7 @@ findNested = (obj, predicate, memo = []) ->
       memo.push obj[predicate]
       break
     else
-      findNested(val, predicate, memo) if _(val).isObject
+      findNested(val, predicate, memo) if _(val).isObject()
   if memo.length then _.first(_.flatten(memo)) else null
 
 isError = (errorCode) ->
@@ -26,11 +26,9 @@ parseResponse = (body) ->
     [err, data] = [createErrorMsg(body, 'errorCode', 'errorText'), body]
   [err, data]
 
-module.exports =
-
-  fetch: (url, raw, deferred) ->
-    request { url }, (err, response, body) ->
-      unless err or raw
-        [err, body] = parseResponse body
-      if err then deferred.reject err
-      else deferred.resolve body
+module.exports = (url, raw, deferred) ->
+  request { url }, (err, response, body) ->
+    unless err or raw
+      [err, body] = parseResponse body
+    if err then deferred.reject err
+    else deferred.resolve body
