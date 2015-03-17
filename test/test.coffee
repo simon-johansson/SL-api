@@ -24,8 +24,13 @@ describe 'SL (Storstockholms Lokaltrafik) API Wrapper', ()->
 
   describe 'new SL({realtimeInformation: "xxx", wrongKeyName: "xxx"})', ()->
     it "should throw InvalidKeyNameSuppliedError", ->
-      InvalidKeyNameSupplied = -> new SL({realtimeInformation: "xxx", wrongKeyName: "xxx"})
-      expect( InvalidKeyNameSupplied ).to.throw /The supplied key (.*) should be one of the following/
+      invalidKeyNameSupplied = -> new SL({realtimeInformation: "xxx", wrongKeyName: "xxx"})
+      expect( invalidKeyNameSupplied ).to.throw /The supplied key (.*) should be one of the following/
+
+  describe 'new SL({realtimeInformation: "xxx"}, "txt")', ()->
+    it "should throw InvalidResponseFormatSuppliedError", ->
+      invalidResponseFormatSupplied = -> new SL({realtimeInformation: "xxx"}, "txt")
+      expect( invalidResponseFormatSupplied ).to.throw /(.*) which you supplied is not supported./
 
 
 
