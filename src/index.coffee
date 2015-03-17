@@ -24,8 +24,9 @@ checkKeyNames = (keys) ->
       throw new err.InvalidKeyNameSuppliedError key
 
 checkSuppliedFormat = (format) ->
-  if format and format.toUpperCase() not in availableFormats
-    throw new err.InvalidResponseFormatSuppliedError format
+  if format
+    if not _(format).isString() or format.toUpperCase() not in availableFormats
+      throw new err.InvalidResponseFormatSuppliedError format
 
 class SL
   constructor: (@keys, @format) ->
