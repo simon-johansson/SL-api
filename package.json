@@ -26,7 +26,6 @@
     "grunt-simple-mocha": "~0.4.0",
     "grunt": "~0.4.2",
     "grunt-release": "^0.11.0",
-    "grunt-coveralls": "^1.0.0",
     "istanbul": "^0.3.7",
     "load-grunt-tasks": "^3.1.0",
     "grunt-mocha-cli": "^1.12.0",
@@ -35,7 +34,8 @@
     "mocha": "^2.2.1",
     "grunt-cli": "^0.1.13",
     "grunt-mocha-test": "^0.12.7",
-    "coffee-script": "^1.9.1"
+    "coffee-script": "^1.9.1",
+    "coveralls": "^2.11.2"
   },
   "dependencies": {
     "request": "^2.53.0",
