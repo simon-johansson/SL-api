@@ -1,52 +1,60 @@
 {
-  "name": "sl-realtime",
+  "name": "SL-api",
+  "description": "Wrapper for Storstockholms Lokaltrafiks (SL) public API:s",
   "version": "0.0.0",
-  "main": "dist/lib/index.js",
-  "description": "Wrapper for Storstockholms Lokaltrafiks (SL) realtime API",
-  "homepage": "https://github.com//sl-wrapper",
-  "bugs": "https://github.com//sl-wrapper/issues",
   "author": {
     "name": "Simon Johansson",
     "email": "mail@simon-johansson.com"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com//sl-wrapper"
+  "bugs": "https://github.com/simon-johansson/SL-api/issues",
+  "dependencies": {
+    "deep-pluck": "^0.1.2",
+    "q": "^1.2.0",
+    "request": "^2.53.0",
+    "type-of": "^2.0.1"
   },
-  "licenses": [
-    {
-      "type": "MIT"
-    }
-  ],
   "devDependencies": {
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-contrib-coffee": "~0.9.0",
-    "grunt-contrib-clean": "~0.5.0",
-    "grunt-coffeelint": "~0.0.8",
-    "grunt-simple-mocha": "~0.4.0",
-    "grunt": "~0.4.2",
-    "grunt-release": "^0.11.0",
-    "istanbul": "^0.3.7",
-    "load-grunt-tasks": "^3.1.0",
-    "grunt-mocha-cli": "^1.12.0",
     "chai": "^2.1.1",
-    "lodash": "^3.5.0",
-    "mocha": "^2.2.1",
-    "grunt-cli": "^0.1.13",
-    "grunt-mocha-test": "^0.12.7",
     "coffee-script": "^1.9.1",
     "coveralls": "^2.11.2",
+    "grunt": "~0.4.2",
+    "grunt-cli": "^0.1.13",
+    "grunt-coffeelint": "~0.0.8",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-coffee": "~0.9.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-mocha-cli": "^1.12.0",
+    "grunt-mocha-test": "^0.12.7",
+    "grunt-release": "^0.11.0",
+    "grunt-simple-mocha": "~0.4.0",
+    "istanbul": "^0.3.7",
+    "load-grunt-tasks": "^3.1.0",
+    "lodash": "^3.5.0",
+    "mocha": "^2.2.1",
     "sinon": "^1.14.1"
   },
-  "dependencies": {
-    "request": "^2.53.0",
-    "type-of": "^2.0.1",
-    "q": "^1.2.0",
-    "deep-pluck": "^0.1.2"
+  "homepage": "https://github.com/simon-johansson/SL-api",
+  "keywords": [
+    "api",
+    "government",
+    "lokaltrafik",
+    "public",
+    "sl",
+    "sthlm",
+    "stockholm",
+    "stockholms",
+    "trafiklab",
+    "wrapper"
+  ],
+  "license": "MIT",
+  "main": "dist/lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simon-johansson/SL-api"
   },
   "scripts": {
     "compile": "grunt compile",
-    "test": "grunt test",
-    "coveralls": "node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha dist/test/test.js --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    "coveralls": "node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha dist/test/test.js --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "test": "grunt test"
   }
 }
