@@ -50,7 +50,7 @@
   "main": "dist/lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/simon-johansson/SL-api"
+    "url": "https://github.com/simon-johansson/SL-api.git"
   },
   "scripts": {
     "compile": "grunt compile",
