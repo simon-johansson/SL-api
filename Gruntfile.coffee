@@ -24,26 +24,26 @@ module.exports = (grunt)->
         configFile: 'coffeelint.json'
 
     coffee:
-      lib:
+      src:
         expand: true
-        cwd: 'src/'
+        cwd: 'lib/'
         src: ['**/*.coffee']
-        dest: 'dist/'
+        dest: 'dist/lib/'
         ext: '.js'
-      # test:
-      #   expand: true
-      #   cwd: 'src/test/'
-      #   src: ['**/*.coffee']
-      #   dest: 'dist/test/'
-      #   ext: '.js'
+      test:
+        expand: true
+        cwd: 'test/'
+        src: ['**/*.coffee']
+        dest: 'dist/test/'
+        ext: '.js'
 
     mochaTest:
       test:
         options:
-          require: 'coffee-script/register'
+          # require: 'coffee-script/register'
           reporter: 'spec'
         src: [
-          'test/**/*.coffee'
+          'dist/test/**/*.js'
         ]
 
     watch:
@@ -86,6 +86,7 @@ module.exports = (grunt)->
   ]
 
   grunt.registerTask 'default', [
+    'clean'
     'compile'
     'test'
   ]
