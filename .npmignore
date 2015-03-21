@@ -12,6 +12,7 @@ src/
 .gitattributes
 .DS_Store
 .jshintrc
+.editorconfig
 coffeelint.json
 LICENSE
 
