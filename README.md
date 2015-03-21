@@ -1,26 +1,21 @@
-# sl-wrapper [![Build Status](https://secure.travis-ci.org//sl-wrapper.png?branch=master)](http://travis-ci.org//sl-wrapper)
+# SL-api
 
-The best module ever.
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Code Climate][codeclimate-image]][codeclimate-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
-## Getting Started
-Install the module with: `npm install sl-wrapper`
+> Wrapper for Storstockholms Lokaltrafiks (SL) public API:s
 
-```javascript
-var sl-wrapper = require('sl-wrapper');
-sl-wrapper.awesome(); // "awesome"
-```
-
-## Documentation
-_(Coming soon)_
-
-## Examples
-_(Coming soon)_
-
-## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
-
-## Release History
-_(Nothing yet)_
 
 ## License
-Copyright (c) 2015 . Licensed under the MIT license.
+
+MIT © [Simon Johansson]()
+
+[npm-image]: https://badge.fury.io/js/SL-api.svg
+[npm-url]: https://npmjs.org/package/SL-api
+[travis-image]: https://travis-ci.org/simon-johansson/SL-api.svg?branch=master
+[travis-url]: https://travis-ci.org/simon-johansson/SL-api
+[coveralls-image]: https://coveralls.io/repos/simon-johansson/SL-api/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/r/simon-johansson/SL-api?branch=master
+[codeclimate-image]: https://codeclimate.com/github/simon-johansson/SL-api/badges/gpa.svg
+[codeclimate-url]: https://codeclimate.com/github/simon-johansson/SL-api
+[daviddm-image]: https://david-dm.org/simon-johansson/SL-api.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/simon-johansson/SL-api
