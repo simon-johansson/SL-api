@@ -31,7 +31,8 @@
     "load-grunt-tasks": "^3.1.0",
     "lodash": "^3.5.0",
     "mocha": "^2.2.1",
-    "sinon": "^1.14.1"
+    "sinon": "^1.14.1",
+    "grunt-contrib-copy": "^0.8.0"
   },
   "homepage": "https://github.com/simon-johansson/SL-api",
   "keywords": [
