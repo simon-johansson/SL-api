@@ -1,13 +1,13 @@
 
-_       = require 'lodash'
-request = require 'request'
-deepPluck = require 'deep-pluck'
+_         = require 'lodash'
+request   = require 'request'
+keyfinder = require 'keyfinder'
 
 isError = (errorCode) ->
   if errorCode? and errorCode.toString() isnt '0' then true else false
 
 createErrorMsg = (body, codeKey, msgKey) ->
-  [code, msg] = [deepPluck(body, codeKey)[0], deepPluck(body, msgKey)[0]]
+  [code, msg] = [keyfinder(body, codeKey)[0], keyfinder(body, msgKey)[0]]
   if isError(code) then "#{code} - #{msg}" else null
 
 parseResponse = (body) ->
