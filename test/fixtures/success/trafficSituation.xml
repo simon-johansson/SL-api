@@ -1,0 +1,164 @@
+<ResponseOfTrafficStatus xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <StatusCode>0</StatusCode>
+    <Message />
+    <ExecutionTime>12</ExecutionTime>
+    <ResponseData>
+        <TrafficTypes xmlns="http://sl.se/TrafficStatus.xsd">
+            <TrafficType Name="Tunnelbana" Type="metro" StatusIcon="EventMinor" Expanded="true" HasPlannedEvent="false">
+                <Events>
+                    <TrafficEvent>
+                        <EventId>2328</EventId>
+                        <Message>Flera rulltrappor vid Skanstull, Slussen, T-Centralen, Hötorget, Rådmansgatan, Odenplan samt alla vid S:t Eriksplan är avstängda av säkerhetsskäl. Trängselrisk föreligger under rusningstid.</Message>
+                        <LineNumbers InputDataIsOptional="true" />
+                        <Expanded>true</Expanded>
+                        <Planned>false</Planned>
+                        <SortIndex>100</SortIndex>
+                        <TrafficLine>Tunnelbana</TrafficLine>
+                        <StatusIcon>EventMinor</StatusIcon>
+                    </TrafficEvent>
+                    <TrafficEvent>
+                        <EventId>2347</EventId>
+                        <Message>Liljeholmen: Nybohovshissen är tillfälligt ur funktion p.g.a. reparationsarbeten. Bussar ersätter från hållplats S.</Message>
+                        <LineNumbers InputDataIsOptional="true" />
+                        <Expanded>true</Expanded>
+                        <Planned>false</Planned>
+                        <SortIndex>100</SortIndex>
+                        <TrafficLine>Röda linjen</TrafficLine>
+                        <StatusIcon>EventGood</StatusIcon>
+                    </TrafficEvent>
+                    <TrafficEvent>
+                        <EventId>2085</EventId>
+                        <Message>Flera rulltrappor vid Zinkensdamm, Hornstull, Slussen, T-Centralen och Östermalmstorg är avstängda av säkerhetsskäl. Trängselrisk föreligger under rusningstid.
+                        </Message>
+                        <LineNumbers InputDataIsOptional="true" />
+                        <Expanded>true</Expanded>
+                        <Planned>false</Planned>
+                        <SortIndex>100</SortIndex>
+                        <TrafficLine>Röda linjen</TrafficLine>
+                        <StatusIcon>EventMinor</StatusIcon>
+                    </TrafficEvent>
+                </Events>
+            </TrafficType>
+            <TrafficType Name="Pendeltåg" Type="train" StatusIcon="EventGood" Expanded="true" HasPlannedEvent="false">
+                <Events>
+                    <TrafficEvent>
+                        <EventId>0</EventId>
+                        <Message>Inga större störningar</Message>
+                        <Expanded>false</Expanded>
+                        <Planned>false</Planned>
+                        <SortIndex>10000</SortIndex>
+                        <StatusIcon>EventGood</StatusIcon>
+                    </TrafficEvent>
+                </Events>
+            </TrafficType>
+            <TrafficType Name="Lokalbana" Type="local" StatusIcon="EventGood" Expanded="true" HasPlannedEvent="false">
+                <Events>
+                    <TrafficEvent>
+                        <EventId>0</EventId>
+                        <Message>Inga större störningar</Message>
+                        <Expanded>false</Expanded>
+                        <Planned>false</Planned>
+                        <SortIndex>10000</SortIndex>
+                        <StatusIcon>EventGood</StatusIcon>
+                    </TrafficEvent>
+                </Events>
+            </TrafficType>
+            <TrafficType Name="Spårvagn" Type="tram" StatusIcon="EventGood" Expanded="true" HasPlannedEvent="true">
+                <Events>
+                    <TrafficEvent>
+                        <EventId>1918</EventId>
+                        <Message>Ingen trafik mellan Nybroplan och Sergels torg pga. vägarbete. Spårvagnarna har ändhållplats vid Norrmalmstorg. Från och med den 30 mars får spårvagnarna en ny permanent ändhållplats vid Kungsträdgården.</Message>
+                        <LineNumbers InputDataIsOptional="true" />
+                        <Expanded>true</Expanded>
+                        <Planned>true</Planned>
+                        <SortIndex>100</SortIndex>
+                        <TrafficLine>Linje 7</TrafficLine>
+                        <StatusIcon>EventPlanned</StatusIcon>
+                    </TrafficEvent>
+                    <TrafficEvent>
+                        <EventId>2270</EventId>
+                        <Message>Den 9 mars-13 maj är hållplats Styrmansgatan indragen i riktning mot city.</Message>
+                        <LineNumbers InputDataIsOptional="true">7</LineNumbers>
+                        <Expanded>true</Expanded>
+                        <Planned>true</Planned>
+                        <SortIndex>100</SortIndex>
+                        <TrafficLine>Linje 7</TrafficLine>
+                        <StatusIcon>EventPlanned</StatusIcon>
+                    </TrafficEvent>
+                    <TrafficEvent>
+                        <EventId>0</EventId>
+                        <Message>Övriga linjer: inga större störningar</Message>
+                        <Expanded>false</Expanded>
+                        <Planned>false</Planned>
+                        <SortIndex>10000</SortIndex>
+                        <StatusIcon>EventGood</StatusIcon>
+                    </TrafficEvent>
+                </Events>
+            </TrafficType>
+            <TrafficType Name="Buss" Type="bus" StatusIcon="EventMinor" Expanded="true" HasPlannedEvent="true">
+                <Events>
+                    <TrafficEvent>
+                        <EventId>2389</EventId>
+                        <Message>Systemunderhåll pågår, vi hänvisar till gällande tidtabell.</Message>
+                        <LineNumbers InputDataIsOptional="true" />
+                        <Expanded>true</Expanded>
+                        <Planned>false</Planned>
+                        <SortIndex>100</SortIndex>
+                        <TrafficLine>Buss</TrafficLine>
+                        <StatusIcon>EventMinor</StatusIcon>
+                    </TrafficEvent>
+                    <TrafficEvent>
+                        <EventId>2221</EventId>
+                        <Message>Gäller linje 617 &amp; 691. Vändslingan stängs av vid Pilotvägen pga schaktarbete. Tillfälliga hållplatser finns utanför vändslingan. Detta gäller fr.o.m. 9 mars t.o.m. 6 april.</Message>
+                        <LineNumbers InputDataIsOptional="true">617,691</LineNumbers>
+                        <Expanded>true</Expanded>
+                        <Planned>true</Planned>
+                        <SortIndex>100</SortIndex>
+                        <TrafficLine>Täby</TrafficLine>
+                        <StatusIcon>EventPlanned</StatusIcon>
+                    </TrafficEvent>
+                    <TrafficEvent>
+                        <EventId>2225</EventId>
+                        <Message>Gäller linjer 604, 605, 627, 695 och 698. Hållplats Täby centrum på Stora marknadsvägen i riktning mot Galoppfältet flyttas bakåt ca 500 m till sitt ordinarie hållplatsläge. Detta börjar gälla fr.o.m. 23 mars.</Message>
+                        <LineNumbers InputDataIsOptional="true">604,605,627,695,698</LineNumbers>
+                        <Expanded>true</Expanded>
+                        <Planned>true</Planned>
+                        <SortIndex>100</SortIndex>
+                        <TrafficLine>Täby</TrafficLine>
+                        <StatusIcon>EventPlanned</StatusIcon>
+                    </TrafficEvent>
+                    <TrafficEvent>
+                        <EventId>0</EventId>
+                        <Message>Övriga linjer: inga större störningar</Message>
+                        <Expanded>false</Expanded>
+                        <Planned>false</Planned>
+                        <SortIndex>10000</SortIndex>
+                        <StatusIcon>EventGood</StatusIcon>
+                    </TrafficEvent>
+                </Events>
+            </TrafficType>
+            <TrafficType Name="Båt" Type="fer" StatusIcon="EventGood" Expanded="true" HasPlannedEvent="true">
+                <Events>
+                    <TrafficEvent>
+                        <EventId>2228</EventId>
+                        <Message>Tabell 1-2: Höganäs brygga (Tynningö) är indragen på grund av ombyggnation fram till mitten av april. Under tiden hänvisar vi resenärer till Norra Tynningö brygga.</Message>
+                        <LineNumbers InputDataIsOptional="true" />
+                        <Expanded>true</Expanded>
+                        <Planned>true</Planned>
+                        <SortIndex>100</SortIndex>
+                        <TrafficLine>Båt</TrafficLine>
+                        <StatusIcon>EventPlanned</StatusIcon>
+                    </TrafficEvent>
+                    <TrafficEvent>
+                        <EventId>0</EventId>
+                        <Message>Inga större störningar</Message>
+                        <Expanded>false</Expanded>
+                        <Planned>false</Planned>
+                        <SortIndex>10000</SortIndex>
+                        <StatusIcon>EventGood</StatusIcon>
+                    </TrafficEvent>
+                </Events>
+            </TrafficType>
+        </TrafficTypes>
+    </ResponseData>
+</ResponseOfTrafficStatus>

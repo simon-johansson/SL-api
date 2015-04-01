@@ -1,0 +1,66 @@
+{
+  "StatusCode": 0,
+  "Message": null,
+  "ExecutionTime": 0,
+  "ResponseData": [{
+    "Name": "Rådmansgatan (t-banan) (Stockholm)",
+    "SiteId": "9118",
+    "Type": "Station",
+    "X": "18057530",
+    "Y": "59341929"
+  }, {
+    "Name": "Rådmansgatan (på Sveavägen) (Stockholm)",
+    "SiteId": "1032",
+    "Type": "Station",
+    "X": "18059202",
+    "Y": "59340158"
+  }, {
+    "Name": "Rådmansö kyrka (Norrtälje)",
+    "SiteId": "6132",
+    "Type": "Station",
+    "X": "18948433",
+    "Y": "59751460"
+  }, {
+    "Name": "Rådmansö skola (Norrtälje)",
+    "SiteId": "6139",
+    "Type": "Station",
+    "X": "18952586",
+    "Y": "59750048"
+  }, {
+    "Name": "Rådmanby affär (Norrtälje)",
+    "SiteId": "6133",
+    "Type": "Station",
+    "X": "18961090",
+    "Y": "59759047"
+  }, {
+    "Name": "Rådmanby by (Norrtälje)",
+    "SiteId": "6134",
+    "Type": "Station",
+    "X": "18967697",
+    "Y": "59759991"
+  }, {
+    "Name": "Näset (Rådmansö)  (Norrtälje)",
+    "SiteId": "6128",
+    "Type": "Station",
+    "X": "18947247",
+    "Y": "59740718"
+  }, {
+    "Name": "Västernäs (Rådmansö)  (Norrtälje)",
+    "SiteId": "6121",
+    "Type": "Station",
+    "X": "18977927",
+    "Y": "59715413"
+  }, {
+    "Name": "Styrmansgatan (Stockholm)",
+    "SiteId": "1107",
+    "Type": "Station",
+    "X": "18084651",
+    "Y": "59331601"
+  }, {
+    "Name": "Sjömansgatan (Norrtälje)",
+    "SiteId": "6049",
+    "Type": "Station",
+    "X": "18711145",
+    "Y": "59751738"
+  }]
+}
