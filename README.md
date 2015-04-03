@@ -1,6 +1,6 @@
 # SL-api
 
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Code Climate][codeclimate-image]][codeclimate-url] [![Dependency Status][daviddm-image]][daviddm-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependency Status][daviddm-image]][daviddm-url] <!-- [![Code Climate][codeclimate-image]][codeclimate-url]  -->
 
 > Wrapper for Storstockholms Lokaltrafiks (SL) public API:s
 
@@ -15,7 +15,7 @@ MIT © [Simon Johansson]()
 [travis-url]: https://travis-ci.org/simon-johansson/SL-api
 [coveralls-image]: https://coveralls.io/repos/simon-johansson/SL-api/badge.svg?branch=master
 [coveralls-url]: https://coveralls.io/r/simon-johansson/SL-api?branch=master
-[codeclimate-image]: https://codeclimate.com/github/simon-johansson/SL-api/badges/gpa.svg
-[codeclimate-url]: https://codeclimate.com/github/simon-johansson/SL-api
 [daviddm-image]: https://david-dm.org/simon-johansson/SL-api.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/simon-johansson/SL-api
+<!-- [codeclimate-image]: https://codeclimate.com/github/simon-johansson/SL-api/badges/gpa.svg -->
+<!-- [codeclimate-url]: https://codeclimate.com/github/simon-johansson/SL-api -->
