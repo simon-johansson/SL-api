@@ -53,7 +53,8 @@ module.exports = (grunt)->
           cwd: 'test',
           dest: 'dist/test/',
           src: [
-            '**/*.json'
+            '**/*.json',
+            '**/*.xml',
           ]
         ]
 
@@ -72,20 +73,24 @@ module.exports = (grunt)->
 
     clean: ['dist/']
 
+    release:
+      options:
+        beforeBump: ['test']
+
 
   # tasks.
   grunt.registerTask 'compile', [
-    'coffeelint'
+    'clean'
     'coffee'
     'copy'
   ]
 
   grunt.registerTask 'test', [
+    'coffeelint'
     'mochaTest'
   ]
 
   grunt.registerTask 'default', [
-    'clean'
     'compile'
     'test'
   ]
