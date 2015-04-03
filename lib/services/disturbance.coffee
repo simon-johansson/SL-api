@@ -13,6 +13,6 @@ module.exports = (args...) ->
   {
     deviations: (args...) ->
       service.prepareRequest 'deviations', args...
-    deviationsRawData: (args...) ->
+    deviationsrawdata: (args...) ->
       service.prepareRequest 'deviationsrawdata', args...
   }
