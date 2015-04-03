@@ -1,0 +1,7 @@
+{
+"TripList":{
+  "noNamespaceSchemaLocation":"hafasRestTrip.xsd",
+  "errorCode":"H9300",
+  "errorText":"Hållplatsnamnet finns inte."
+  }
+}
