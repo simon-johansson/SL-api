@@ -1,1 +1,1 @@
---compilers coffee:coffee-script/register -R min
+--compilers coffee:coffee-script/register -R spec
