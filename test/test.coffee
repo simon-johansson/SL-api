@@ -3,23 +3,12 @@ fs         = require 'fs'
 sinon      = require 'sinon'
 isJSON     = require 'is-json'
 request    = require 'request'
-nock       = require 'nock'
 
 SL = require '../lib/'
 
 chai       = require 'chai'
 { expect } = require 'chai'
-chai.use(require('chai-json-schema'))
 chai.use(require('chai-xml'))
-
-###
-* Test promises
-* Test chaning promises (using mocks? nock.js?)
-* Test specifying format 'JSON' and 'XML'
-* Test att url:en är rätt
-* Test att request kastar en error
-* Testa getRaw
-###
 
 keys =
   realtimeInformation: 'xxx'
