@@ -1,15 +1,15 @@
 
-_ = require 'lodash'
+_      = require 'lodash'
 typeOf = require 'type-of'
 
 err = require './errors'
-{ availableKeys, availableFormats } = require './api_config'
+{ availableKeys, availableFormats } = require './config'
 
-RealtimeInformation    = require './services/realtime'
-LocationLookup         = require './services/location'
-TripPlanner            = require './services/trip'
-TrafficSituation       = require './services/traffic'
-DisturbanceInformation = require './services/disturbance'
+RealtimeInformation    = require './services/RealtimeInformation'
+LocationLookup         = require './services/LocationLookup'
+TripPlanner            = require './services/TripPlanner'
+TrafficSituation       = require './services/TrafficSituation'
+DisturbanceInformation = require './services/DisturbanceInformation'
 
 checkIfKeyIsSupplied = (keys) ->
   throw new err.NoKeySuppliedError unless keys?

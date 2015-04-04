@@ -1,5 +1,5 @@
 
-Base = require './base'
+Base = require './Base'
 
 class LocationLookup extends Base
   constructor: (config) ->

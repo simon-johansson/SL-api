@@ -4,8 +4,8 @@ _       = require 'lodash'
 Q       = require 'q'
 
 request = require '../request'
-errors = require '../errors'
-{ api } = require '../api_config'
+errors  = require '../errors'
+{ api } = require '../config'
 
 checkArgumentOrder = (options, fn) ->
   if _(options).isFunction() then [options, {}]

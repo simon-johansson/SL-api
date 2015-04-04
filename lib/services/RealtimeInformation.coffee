@@ -1,5 +1,5 @@
 
-Base = require './base'
+Base = require './Base'
 
 class RealtimeInformation extends Base
   constructor: (config) ->

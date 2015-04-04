@@ -1,5 +1,5 @@
 
-{ availableKeys, availableFormats } = require './api_config'
+{ availableKeys, availableFormats } = require './config'
 
 exported = {}
 

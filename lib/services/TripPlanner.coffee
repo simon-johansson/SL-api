@@ -1,5 +1,5 @@
 
-Base = require './base'
+Base = require './Base'
 
 class TripPlanner extends Base
   constructor: (config) ->
