@@ -11,7 +11,7 @@
     "q": "^1.2.0",
     "request": "^2.53.0",
     "type-of": "^2.0.1",
-    "keyfinder": "0.0.2"
+    "keyfinder": "^1.0.0"
   },
   "devDependencies": {
     "chai": "^2.1.1",
