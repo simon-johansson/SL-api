@@ -1,6 +1,8 @@
 # SL-api
 
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependency Status][daviddm-image]][daviddm-url] <!-- [![Code Climate][codeclimate-image]][codeclimate-url]  -->
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependency Status][daviddm-image]][daviddm-url]
+
+<!-- [![Code Climate][codeclimate-image]][codeclimate-url]  -->
 
 > Wrapper for Storstockholms Lokaltrafiks (SL) public API:s
 
