@@ -1,11 +1,15 @@
-/node_modules/
-/coverage/
+node_modules/
+coverage/
+lib/
+test/
+dist/test/
+example/
+
+example.coffee
 
 .travis*
 Gruntfile.coffee
 Gruntfile.js
-
-src/
 
 .git/
 .gitignore
