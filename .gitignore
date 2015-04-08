@@ -1,6 +1,7 @@
 /node_modules/
 /coverage/
 /dist/
+/example/keys.json
 
 .DS_Store
 
