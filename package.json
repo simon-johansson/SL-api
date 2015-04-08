@@ -34,7 +34,8 @@
     "mocha": "^2.2.1",
     "sinon": "^1.14.1",
     "is-json": "^1.2.5",
-    "chai-xml": "^0.3.0"
+    "chai-xml": "^0.3.0",
+    "husky": "^0.7.0"
   },
   "homepage": "https://github.com/simon-johansson/SL-api",
   "keywords": [
@@ -61,6 +62,9 @@
   "scripts": {
     "compile": "grunt compile",
     "coveralls": "node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha dist/test/test.js --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
-    "test": "grunt test"
+    "test": "grunt test",
+    "example": "npm run compile && node exmaple/",
+    "precommit": "npm run compile && npm test",
+    "prepush": "npm run compile && npm test"
   }
 }
