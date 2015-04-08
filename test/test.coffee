@@ -1,3 +1,4 @@
+# coffeelint: disable=max_line_length
 
 fs         = require 'fs'
 sinon      = require 'sinon'
@@ -173,6 +174,14 @@ describe 'SL (Storstockholms Lokaltrafik) API Wrapper\n', ()->
         promise.then (data) ->
           expect(data).to.not.be.empty
           expect(data).to.be.an "array"
+        .done ->
+          done()
+
+      it 'query string should contain api key even if options object is not supplied', (done) ->
+        promise = sl.realtimeInformation()
+        promise.then (data) ->
+          url = request.get.args[0][0].url
+          expect(url).to.contain 'key=xxx'
         .done ->
           done()
 

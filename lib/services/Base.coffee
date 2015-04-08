@@ -7,9 +7,10 @@ request = require '../request'
 errors  = require '../errors'
 { api } = require '../config'
 
-checkArgumentOrder = (options, fn) ->
-  if _(options).isFunction() then [options, {}]
-  else [fn, options]
+checkArgumentOrder = (args...) ->
+  if not args[0]? then [{}, undefined]
+  else if _(args[0]).isFunction() then [{}, args[0]]
+  else args
 
 class Base
   constructor: (config) ->
@@ -26,13 +27,13 @@ class Base
   __mergeDefaultOptions: (options) ->
     _.defaults options, @defaults, { @key }
 
-  prepareRequest: (action, options, fn) ->
+  prepareRequest: (action, args...) ->
     if not @key then throw new errors.NoKeySuppliedForServiceError @service
     deferred = Q.defer()
-    [fn, options] = checkArgumentOrder options, fn
+    [options, clb] = checkArgumentOrder args...
     options = @__mergeDefaultOptions options
     url = @__createUrl options, action
     request url, @getRaw, deferred
-    deferred.promise.nodeify fn
+    deferred.promise.nodeify clb
 
 module.exports = Base
