@@ -1,0 +1,268 @@
+{
+    "StatusCode": 0,
+    "Message": "",
+    "ExecutionTime": 13,
+    "ResponseData": {
+        "TrafficTypes": [{
+            "Id": 2,
+            "Name": "Tunnelbana",
+            "Type": "metro",
+            "TrafficStatus": null,
+            "StatusIcon": "EventMinor",
+            "Events": [{
+                "EventId": 2467,
+                "Message": "Nybohovshissen vid Liljeholmen fungerar inte på grund av tekniskt fel. Buss kör mellan Nybohovsbacken och hållplats S vid Liljeholmstorget.\n",
+                "LineNumbers": {
+                    "InputDataIsOptional": true,
+                    "Text": null
+                },
+                "Expanded": true,
+                "Planned": false,
+                "SortIndex": 100,
+                "TrafficLine": "Röda linjen",
+                "EventInfoUrl": null,
+                "Status": null,
+                "StatusIcon": "EventMinor"
+            }, {
+                "EventId": 2471,
+                "Message": "Alla rulltrapporna vid S:t Eriksplan och flera vid Hötorget, Odenplan, Rådmansgatan och Slussen är avstängda av säkerhetsskäl. Trängselrisk föreligger under rusningstid.",
+                "LineNumbers": {
+                    "InputDataIsOptional": true,
+                    "Text": null
+                },
+                "Expanded": true,
+                "Planned": false,
+                "SortIndex": 100,
+                "TrafficLine": "Gröna linjen",
+                "EventInfoUrl": null,
+                "Status": null,
+                "StatusIcon": "EventMinor"
+            }, {
+                "EventId": 0,
+                "Message": "Övriga linjer: inga större störningar",
+                "LineNumbers": null,
+                "Expanded": false,
+                "Planned": false,
+                "SortIndex": 10000,
+                "TrafficLine": null,
+                "EventInfoUrl": null,
+                "Status": null,
+                "StatusIcon": "EventGood"
+            }],
+            "Expanded": true,
+            "HasPlannedEvent": false
+        }, {
+            "Id": 6,
+            "Name": "Pendeltåg",
+            "Type": "train",
+            "TrafficStatus": null,
+            "StatusIcon": "EventGood",
+            "Events": [{
+                "EventId": 2530,
+                "Message": "Kommande händelse: Inställd trafik Arlanda-Uppsala imorgon söndag kl. 01-07 pga banarbete. Buss 38U ersätter.",
+                "LineNumbers": {
+                    "InputDataIsOptional": true,
+                    "Text": null
+                },
+                "Expanded": true,
+                "Planned": true,
+                "SortIndex": 150,
+                "TrafficLine": "Älvsjö-Uppsala",
+                "EventInfoUrl": null,
+                "Status": null,
+                "StatusIcon": "EventPlanned"
+            }, {
+                "EventId": 2456,
+                "Message": "Inga tåg stannar i Årstaberg fram till 2 augusti pga renovering av gamla Årstabron.",
+                "LineNumbers": {
+                    "InputDataIsOptional": true,
+                    "Text": null
+                },
+                "Expanded": true,
+                "Planned": true,
+                "SortIndex": 160,
+                "TrafficLine": "Pendeltåg",
+                "EventInfoUrl": "http://sl.se/sv/info/resa/forandringar/pendeltag/arstabron2015/",
+                "Status": null,
+                "StatusIcon": "EventPlanned"
+            }, {
+                "EventId": 2488,
+                "Message": "Bussar ersätter mellan Spånga och Bålsta till måndag 13 april kl 02:00  pga arbeten med Mälarbanan.",
+                "LineNumbers": {
+                    "InputDataIsOptional": true,
+                    "Text": "986"
+                },
+                "Expanded": true,
+                "Planned": true,
+                "SortIndex": 160,
+                "TrafficLine": "Bålsta-Nynäshamn",
+                "EventInfoUrl": "http://sl.se/sv/info/resa/forandringar/pendeltag/spanga-balsta-pasklov/",
+                "Status": null,
+                "StatusIcon": "EventPlanned"
+            }, {
+                "EventId": 0,
+                "Message": "Övriga linjer: inga större störningar",
+                "LineNumbers": null,
+                "Expanded": false,
+                "Planned": false,
+                "SortIndex": 10000,
+                "TrafficLine": null,
+                "EventInfoUrl": null,
+                "Status": null,
+                "StatusIcon": "EventGood"
+            }],
+            "Expanded": true,
+            "HasPlannedEvent": true
+        }, {
+            "Id": 14,
+            "Name": "Lokalbana",
+            "Type": "local",
+            "TrafficStatus": null,
+            "StatusIcon": "EventGood",
+            "Events": [{
+                "EventId": 0,
+                "Message": "Inga större störningar",
+                "LineNumbers": null,
+                "Expanded": false,
+                "Planned": false,
+                "SortIndex": 10000,
+                "TrafficLine": null,
+                "EventInfoUrl": null,
+                "Status": null,
+                "StatusIcon": "EventGood"
+            }],
+            "Expanded": true,
+            "HasPlannedEvent": false
+        }, {
+            "Id": 20,
+            "Name": "Spårvagn",
+            "Type": "tram",
+            "TrafficStatus": null,
+            "StatusIcon": "EventMinor",
+            "Events": [{
+                "EventId": 2270,
+                "Message": "9 mars-13 maj är hållplats Styrmansgatan indragen i riktning mot city pga. vägarbete.",
+                "LineNumbers": {
+                    "InputDataIsOptional": true,
+                    "Text": "7"
+                },
+                "Expanded": true,
+                "Planned": true,
+                "SortIndex": 100,
+                "TrafficLine": "Linje 7",
+                "EventInfoUrl": null,
+                "Status": null,
+                "StatusIcon": "EventPlanned"
+            }, {
+                "EventId": 2544,
+                "Message": "Trafiken är åter igång mellan Solna station och Alvik efter ett tidigare stopp.",
+                "LineNumbers": {
+                    "InputDataIsOptional": true,
+                    "Text": "22"
+                },
+                "Expanded": true,
+                "Planned": false,
+                "SortIndex": 100,
+                "TrafficLine": "Tvärbanan",
+                "EventInfoUrl": null,
+                "Status": null,
+                "StatusIcon": "EventMinor"
+            }, {
+                "EventId": 0,
+                "Message": "Övriga linjer: inga större störningar",
+                "LineNumbers": null,
+                "Expanded": false,
+                "Planned": false,
+                "SortIndex": 10000,
+                "TrafficLine": null,
+                "EventInfoUrl": null,
+                "Status": null,
+                "StatusIcon": "EventGood"
+            }],
+            "Expanded": true,
+            "HasPlannedEvent": true
+        }, {
+            "Id": 22,
+            "Name": "Buss",
+            "Type": "bus",
+            "TrafficStatus": null,
+            "StatusIcon": "EventGood",
+            "Events": [{
+                "EventId": 2472,
+                "Message": "på grund av vägarbete på Hornsgatan är linje 43, 55, 190, 191, 192, 193, 194 och 195 omlagda från den 6 april kl. 19.00 – den 21 april kl. 05.00. Din resa kan ta längre tid.",
+                "LineNumbers": {
+                    "InputDataIsOptional": true,
+                    "Text": null
+                },
+                "Expanded": true,
+                "Planned": true,
+                "SortIndex": 100,
+                "TrafficLine": "Innerstan",
+                "EventInfoUrl": null,
+                "Status": null,
+                "StatusIcon": "EventPlanned"
+            }, {
+                "EventId": 2225,
+                "Message": "Gäller linjer 604, 605, 627, 695 och 698.\nHållplats Täby centrum på Stora marknadsvägen i riktning mot Galoppfältet flyttas bakåt ca 500 m till sitt ordinarie hållplatsläge. Detta börjar gälla fr.o.m. 23 mars.",
+                "LineNumbers": {
+                    "InputDataIsOptional": true,
+                    "Text": "604,605,627,695,698"
+                },
+                "Expanded": true,
+                "Planned": true,
+                "SortIndex": 100,
+                "TrafficLine": "Täby",
+                "EventInfoUrl": null,
+                "Status": null,
+                "StatusIcon": "EventPlanned"
+            }, {
+                "EventId": 0,
+                "Message": "Övriga linjer: inga större störningar",
+                "LineNumbers": null,
+                "Expanded": false,
+                "Planned": false,
+                "SortIndex": 10000,
+                "TrafficLine": null,
+                "EventInfoUrl": null,
+                "Status": null,
+                "StatusIcon": "EventGood"
+            }],
+            "Expanded": true,
+            "HasPlannedEvent": true
+        }, {
+            "Id": 45,
+            "Name": "Båt",
+            "Type": "fer",
+            "TrafficStatus": null,
+            "StatusIcon": "EventGood",
+            "Events": [{
+                "EventId": 2228,
+                "Message": "Tabell 1-2: Höganäs brygga (Tynningö) är indragen på grund av ombyggnation fram till mitten av april. Under tiden hänvisar vi resenärer till Norra Tynningö brygga.",
+                "LineNumbers": {
+                    "InputDataIsOptional": true,
+                    "Text": null
+                },
+                "Expanded": true,
+                "Planned": true,
+                "SortIndex": 100,
+                "TrafficLine": "Båt",
+                "EventInfoUrl": null,
+                "Status": null,
+                "StatusIcon": "EventPlanned"
+            }, {
+                "EventId": 0,
+                "Message": "Inga större störningar",
+                "LineNumbers": null,
+                "Expanded": false,
+                "Planned": false,
+                "SortIndex": 10000,
+                "TrafficLine": null,
+                "EventInfoUrl": null,
+                "Status": null,
+                "StatusIcon": "EventGood"
+            }],
+            "Expanded": true,
+            "HasPlannedEvent": true
+        }]
+    }
+}

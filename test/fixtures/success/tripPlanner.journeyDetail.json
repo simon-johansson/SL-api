@@ -1,0 +1,155 @@
+{
+    "JourneyDetail": {
+        "noNamespaceSchemaLocation": "hafasRestJourneyDetail.xsd",
+        "Stops": {
+            "Stop": [{
+                "name": "Västerhaninge",
+                "id": "400106172",
+                "lon": "18.102863",
+                "lat": "59.122925",
+                "routeIdx": "0",
+                "depTime": "21:53",
+                "depDate": "2015-04-11"
+            }, {
+                "name": "Jordbro",
+                "id": "400106162",
+                "lon": "18.126379",
+                "lat": "59.142333",
+                "routeIdx": "1",
+                "arrTime": "21:56",
+                "arrDate": "2015-04-11",
+                "depTime": "21:56",
+                "depDate": "2015-04-11"
+            }, {
+                "name": "Handen",
+                "id": "400106152",
+                "lon": "18.135035",
+                "lat": "59.168159",
+                "routeIdx": "2",
+                "arrTime": "21:59",
+                "arrDate": "2015-04-11",
+                "depTime": "21:59",
+                "depDate": "2015-04-11"
+            }, {
+                "name": "Skogås",
+                "id": "400106142",
+                "lon": "18.154236",
+                "lat": "59.218408",
+                "routeIdx": "3",
+                "arrTime": "22:05",
+                "arrDate": "2015-04-11",
+                "depTime": "22:05",
+                "depDate": "2015-04-11"
+            }, {
+                "name": "Trångsund",
+                "id": "400106132",
+                "lon": "18.130990",
+                "lat": "59.227613",
+                "routeIdx": "4",
+                "arrTime": "22:07",
+                "arrDate": "2015-04-11",
+                "depTime": "22:07",
+                "depDate": "2015-04-11"
+            }, {
+                "name": "Farsta strand",
+                "id": "400106122",
+                "lon": "18.101973",
+                "lat": "59.236657",
+                "routeIdx": "5",
+                "arrTime": "22:10",
+                "arrDate": "2015-04-11",
+                "depTime": "22:10",
+                "depDate": "2015-04-11"
+            }, {
+                "name": "Älvsjö",
+                "id": "400105144",
+                "lon": "18.010427",
+                "lat": "59.278582",
+                "routeIdx": "6",
+                "arrTime": "22:16",
+                "arrDate": "2015-04-11",
+                "depTime": "22:16",
+                "depDate": "2015-04-11"
+            }, {
+                "name": "Stockholms södra",
+                "id": "400105134",
+                "lon": "18.061890",
+                "lat": "59.313613",
+                "routeIdx": "7",
+                "arrTime": "22:22",
+                "arrDate": "2015-04-11",
+                "depTime": "22:22",
+                "depDate": "2015-04-11"
+            }, {
+                "name": "Stockholms central",
+                "id": "400105014",
+                "lon": "18.057755",
+                "lat": "59.329362",
+                "routeIdx": "8",
+                "arrTime": "22:26",
+                "arrDate": "2015-04-11",
+                "depTime": "22:28",
+                "depDate": "2015-04-11"
+            }, {
+                "name": "Karlberg",
+                "id": "400105022",
+                "lon": "18.029547",
+                "lat": "59.339520",
+                "routeIdx": "9",
+                "arrTime": "22:31",
+                "arrDate": "2015-04-11",
+                "depTime": "22:31",
+                "depDate": "2015-04-11"
+            }, {
+                "name": "Sundbyberg",
+                "id": "400106032",
+                "lon": "17.970506",
+                "lat": "59.361211",
+                "routeIdx": "10",
+                "arrTime": "22:36",
+                "arrDate": "2015-04-11",
+                "depTime": "22:36",
+                "depDate": "2015-04-11"
+            }, {
+                "name": "Spånga",
+                "id": "400106042",
+                "lon": "17.896731",
+                "lat": "59.384313",
+                "routeIdx": "11",
+                "arrTime": "22:40",
+                "arrDate": "2015-04-11"
+            }]
+        },
+        "GeometryRef": {
+            "ref": "ref%3D982062%2F335755%2F672836%2F9064%2F74%26lang%3Dsv%26format%3Djson%26"
+        },
+        "Names": {
+            "Name": {
+                "routeIdxFrom": "0",
+                "routeIdxTo": "11",
+                "$": "pendeltåg 35"
+            }
+        },
+        "Types": {
+            "Type": {
+                "routeIdxFrom": "0",
+                "routeIdxTo": "11",
+                "$": "TRAIN"
+            }
+        },
+        "Lines": {
+            "Line": {
+                "routeIdxFrom": "0",
+                "routeIdxTo": "11",
+                "$": "35"
+            }
+        },
+        "Directions": {
+            "Direction": {
+                "routeIdxFrom": "0",
+                "routeIdxTo": "11",
+                "$": "Spånga"
+            }
+        }
+    }
+}
