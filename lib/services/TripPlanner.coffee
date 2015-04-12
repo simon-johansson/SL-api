@@ -7,6 +7,22 @@ class TripPlanner extends Base
     @service = 'tripPlanner (SL Reseplanerare 2)'
     super
 
+  parseResponse: (body) ->
+    body = JSON.parse body
+    if body.TripList?
+      service = 'TripList'
+      data = body.TripList.Trip
+    else if body.JourneyDetail?
+      service = 'JourneyDetail'
+      data = body.JourneyDetail
+    else if body.Geometry?
+      service = 'Geometry'
+      data = body.Geometry.Points.Point
+    err = if service and body[service].errorCode?
+      "#{body[service].errorCode} - #{body[service].errorText}"
+    else null
+    [err, data]
+
 module.exports = (args...) ->
   service = new TripPlanner args...
   {

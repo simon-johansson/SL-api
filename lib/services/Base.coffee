@@ -2,8 +2,8 @@
 qs      = require 'querystring'
 _       = require 'lodash'
 Q       = require 'q'
+request   = require 'request'
 
-request = require '../request'
 errors  = require '../errors'
 { api } = require '../config'
 
@@ -21,19 +21,34 @@ class Base
   # WIP
   setDefaults: (@defaults) ->
 
-  __createUrl: (options, action) ->
+  createUrl: (options, action) ->
     "#{@baseURL}#{action}.#{@format}?#{qs.stringify options}"
 
-  __mergeDefaultOptions: (options) ->
+  mergeDefaultOptions: (options) ->
     _.defaults options, @defaults, { @key }
+
+  parseResponse: (body) ->
+    body = JSON.parse body
+    err = if body.StatusCode isnt 0
+      "#{body.StatusCode} - #{body.Message}"
+    else null
+    [err, body.ResponseData]
+
+  fetchData: (url, clb) ->
+    request.get { url }, (err, response, body) =>
+      unless err or @getRaw
+        [err, body] = @parseResponse body
+      clb err, body
 
   prepareRequest: (action, args...) ->
     if not @key then throw new errors.NoKeySuppliedForServiceError @service
     deferred = Q.defer()
     [options, clb] = checkArgumentOrder args...
-    options = @__mergeDefaultOptions options
-    url = @__createUrl options, action
-    request url, @getRaw, deferred
+    options = @mergeDefaultOptions options
+    url = @createUrl options, action
+    @fetchData url, (err, body) ->
+      if err then deferred.reject err
+      else deferred.resolve body
     deferred.promise.nodeify clb
 
 module.exports = Base
