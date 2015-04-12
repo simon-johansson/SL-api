@@ -50,72 +50,175 @@ describe 'SL (Storstockholms Lokaltrafik) API Wrapper\n', ()->
 
   describe 'SL', ->
 
-    beforeEach (done) ->
-      sinon.stub(request, 'get').yields(null, null, JSON.stringify({}))
-      done()
-
     afterEach (done) ->
       request.get.restore()
       done()
 
     describe '#realtimeInformation', ->
+
+      response = require './fixtures/success/realtimeInformation.json'
+
+      beforeEach (done) ->
+        sinon.stub(request, 'get').yields(null, null, JSON.stringify(response))
+        done()
+
       it 'should make request to realtimedepartures endpoint', (done) ->
         new SL(keys).realtimeInformation (err, data) ->
           url = request.get.args[0][0].url
           expect(url).to.eql 'http://api.sl.se/api2/realtimedepartures.json?key=xxx'
           done()
 
+      it 'should return the response with right formatting', (done) ->
+        new SL(keys).realtimeInformation (err, data) ->
+          expect(data).to.be.an "object"
+          expect(data).to.have.property 'Metros'
+          expect(data).to.have.property 'Buses'
+          expect(data).to.have.property 'Trams'
+          expect(data).to.have.property 'Ships'
+          done()
+
     describe '#locationLookup', ->
+
+      response = require './fixtures/success/locationLookup.json'
+
+      beforeEach (done) ->
+        sinon.stub(request, 'get').yields(null, null, JSON.stringify(response))
+        done()
+
       it 'should make request to typeahead endpoint', (done) ->
         new SL(keys).locationLookup (err, data) ->
           url = request.get.args[0][0].url
           expect(url).to.eql 'http://api.sl.se/api2/typeahead.json?key=xxx'
           done()
 
+      it 'should return the response with right formatting', (done) ->
+        new SL(keys).locationLookup (err, data) ->
+          expect(data).to.be.an "array"
+          expect(data[0]).to.have.property 'Name'
+          expect(data[0]).to.have.property 'SiteId'
+          expect(data[0]).to.have.property 'Type'
+          expect(data[0]).to.have.property 'X'
+          expect(data[0]).to.have.property 'Y'
+          done()
+
     describe '#trafficSituation', ->
+
+      response = require './fixtures/success/trafficSituation.json'
+
+      beforeEach (done) ->
+        sinon.stub(request, 'get').yields(null, null, JSON.stringify(response))
+        done()
+
       it 'should make request to trafficsituation endpoint', (done) ->
         new SL(keys).trafficSituation (err, data) ->
           url = request.get.args[0][0].url
           expect(url).to.eql 'http://api.sl.se/api2/trafficsituation.json?key=xxx'
           done()
 
+      it 'should return the response with right formatting', (done) ->
+        new SL(keys).trafficSituation (err, data) ->
+          expect(data).to.be.an "array"
+          expect(data[0]).to.have.property 'Id'
+          expect(data[0]).to.have.property 'Name'
+          expect(data[0]).to.have.property 'Type'
+          expect(data[0]).to.have.property 'TrafficStatus'
+          expect(data[0]).to.have.property 'StatusIcon'
+          expect(data[0]).to.have.property 'Events'
+          done()
+
+
     describe '#disturbanceInformation', ->
 
       describe '#deviations', ->
+
+        response = require './fixtures/success/disturbanceInformation.deviations.json'
+
+        beforeEach (done) ->
+          sinon.stub(request, 'get').yields(null, null, JSON.stringify(response))
+          done()
+
         it 'should make request to deviations endpoint', (done) ->
           new SL(keys).disturbanceInformation.deviations (err, data) ->
             url = request.get.args[0][0].url
             expect(url).to.eql 'http://api.sl.se/api2/deviations.json?key=xxx'
             done()
 
+        it 'should return the response with right formatting', (done) ->
+          new SL(keys).disturbanceInformation.deviations (err, data) ->
+            done()
+
       describe '#deviationsRawData', ->
+
+        response = require './fixtures/success/disturbanceInformation.deviationsRawData.json'
+
+        beforeEach (done) ->
+          sinon.stub(request, 'get').yields(null, null, JSON.stringify(response))
+          done()
+
         it 'should make request to deviationsrawdata endpoint', (done) ->
           new SL(keys).disturbanceInformation.deviationsrawdata (err, data) ->
             url = request.get.args[0][0].url
             expect(url).to.eql 'http://api.sl.se/api2/deviationsrawdata.json?key=xxx'
             done()
 
+        it 'should return the response with right formatting', (done) ->
+          new SL(keys).disturbanceInformation.deviationsrawdata (err, data) ->
+            done()
+
     describe '#tripPlanner', ->
 
       describe '#trip', ->
+
+        response = require './fixtures/success/tripPlanner.trip.json'
+
+        beforeEach (done) ->
+          sinon.stub(request, 'get').yields(null, null, JSON.stringify(response))
+          done()
+
         it 'should make request to TravelplannerV2/trip endpoint', (done) ->
           new SL(keys).tripPlanner.trip (err, data) ->
             url = request.get.args[0][0].url
             expect(url).to.eql 'http://api.sl.se/api2/TravelplannerV2/trip.json?key=xxx'
             done()
 
+        it 'should return the response with right formatting', (done) ->
+          new SL(keys).tripPlanner.trip (err, data) ->
+            done()
+
       describe '#journeyDetail', ->
+
+        response = require './fixtures/success/tripPlanner.journeyDetail.json'
+
+        beforeEach (done) ->
+          sinon.stub(request, 'get').yields(null, null, JSON.stringify(response))
+          done()
+
         it 'should make request to TravelplannerV2/journeydetail endpoint', (done) ->
           new SL(keys).tripPlanner.journeyDetail (err, data) ->
             url = request.get.args[0][0].url
             expect(url).to.eql 'http://api.sl.se/api2/TravelplannerV2/journeydetail.json?key=xxx'
             done()
 
+        it 'should return the response with right formatting', (done) ->
+          new SL(keys).tripPlanner.journeyDetail (err, data) ->
+            done()
+
       describe '#geometry', ->
-        it 'should make request to TravelplannerV2/geometry endpoint\n', (done) ->
+
+        response = require './fixtures/success/tripPlanner.geometry.json'
+
+        beforeEach (done) ->
+          sinon.stub(request, 'get').yields(null, null, JSON.stringify(response))
+          done()
+
+        it 'should make request to TravelplannerV2/geometry endpoint', (done) ->
           new SL(keys).tripPlanner.geometry (err, data) ->
             url = request.get.args[0][0].url
             expect(url).to.eql 'http://api.sl.se/api2/TravelplannerV2/geometry.json?key=xxx'
+            done()
+
+        it 'should return the response with right formatting\n', (done) ->
+          new SL(keys).tripPlanner.geometry (err, data) ->
             done()
 
 
