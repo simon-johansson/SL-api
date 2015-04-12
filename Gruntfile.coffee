@@ -37,15 +37,6 @@ module.exports = (grunt)->
         dest: 'dist/test/'
         ext: '.js'
 
-    mochaTest:
-      test:
-        options:
-          # require: 'coffee-script/register'
-          reporter: 'spec'
-        src: [
-          'dist/test/**/*.js'
-        ]
-
     copy:
       dist:
         files: [
