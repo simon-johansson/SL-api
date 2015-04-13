@@ -6,6 +6,7 @@ dist/test/
 example/
 
 example.coffee
+example.js
 
 .travis*
 Gruntfile.coffee
