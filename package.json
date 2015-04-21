@@ -63,7 +63,7 @@
     "compile": "grunt compile",
     "coveralls": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha dist/test/test.js --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls && rm -rf ./coverage",
     "test": "mocha --compilers coffee:coffee-script/register -R spec",
-    "example": "npm run-script compile && node example/",
+    "example": "npm run-script compile && node example/index.js",
     "precommit": "npm test",
     "prepush": "npm test"
   }
