@@ -9,7 +9,7 @@ SL = require '../lib/'
 
 chai       = require 'chai'
 { expect } = require 'chai'
-chai.use(require('chai-xml'))
+chai.use require('chai-xml')
 
 keys =
   realtimeInformation: 'xxx'
@@ -145,6 +145,11 @@ describe 'SL (Storstockholms Lokaltrafik) API Wrapper\n', ()->
 
         it 'should return the response with right formatting', (done) ->
           new SL(keys).disturbanceInformation.deviations (err, data) ->
+            expect(data).to.be.an "array"
+            expect(data[0]).to.have.property 'MainNews'
+            expect(data[0]).to.have.property 'Header'
+            expect(data[0]).to.have.property 'Details'
+            expect(data[0]).to.have.property 'Scope'
             done()
 
       describe '#deviationsRawData', ->
@@ -163,6 +168,11 @@ describe 'SL (Storstockholms Lokaltrafik) API Wrapper\n', ()->
 
         it 'should return the response with right formatting', (done) ->
           new SL(keys).disturbanceInformation.deviationsrawdata (err, data) ->
+            expect(data).to.be.an "array"
+            expect(data[0]).to.have.property 'Priority'
+            expect(data[0]).to.have.property 'SiteId'
+            expect(data[0]).to.have.property 'LineNumber'
+            expect(data[0]).to.have.property 'TransportMode'
             done()
 
     describe '#tripPlanner', ->
@@ -183,6 +193,12 @@ describe 'SL (Storstockholms Lokaltrafik) API Wrapper\n', ()->
 
         it 'should return the response with right formatting', (done) ->
           new SL(keys).tripPlanner.trip (err, data) ->
+            expect(data).to.be.an "array"
+            expect(data[0]).to.have.property 'dur'
+            expect(data[0]).to.have.property 'chg'
+            expect(data[0]).to.have.property 'co2'
+            expect(data[0]).to.have.property 'LegList'
+            expect(data[0]).to.have.property 'PriceInfo'
             done()
 
       describe '#journeyDetail', ->
@@ -201,6 +217,13 @@ describe 'SL (Storstockholms Lokaltrafik) API Wrapper\n', ()->
 
         it 'should return the response with right formatting', (done) ->
           new SL(keys).tripPlanner.journeyDetail (err, data) ->
+            expect(data).to.be.an "object"
+            expect(data).to.have.property 'Stops'
+            expect(data).to.have.property 'GeometryRef'
+            expect(data).to.have.property 'Names'
+            expect(data).to.have.property 'Types'
+            expect(data).to.have.property 'Lines'
+            expect(data).to.have.property 'Directions'
             done()
 
       describe '#geometry', ->
@@ -219,6 +242,9 @@ describe 'SL (Storstockholms Lokaltrafik) API Wrapper\n', ()->
 
         it 'should return the response with right formatting\n', (done) ->
           new SL(keys).tripPlanner.geometry (err, data) ->
+            expect(data).to.be.an "array"
+            expect(data[0]).to.have.property 'lat'
+            expect(data[0]).to.have.property 'lon'
             done()
 
 
