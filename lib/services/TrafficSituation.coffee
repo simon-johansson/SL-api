@@ -12,7 +12,7 @@ class TrafficSituation extends Base
     err = if body.StatusCode isnt 0
       "#{body.StatusCode} - #{body.Message}"
     else null
-    [err, body.ResponseData.TrafficTypes]
+    [err, body.ResponseData?.TrafficTypes]
 
 module.exports = (args...) ->
   service = new TrafficSituation args...
