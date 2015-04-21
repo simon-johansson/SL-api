@@ -1,0 +1,7 @@
+{
+  "realtimeInformation": "<key for: SL Realtidsinformation 3>"
+  "locationLookup": "<key for: SL Platsuppslag>"
+  "tripPlanner": "<key for: SL Reseplanerare 2>"
+  "trafficSituation": "<key for: SL Trafikläget 2>"
+  "disturbanceInformation": "<key for: SL Störningsinformation 2>"
+}

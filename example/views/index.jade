@@ -1,0 +1,9 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='https://cdn.rawgit.com/sindresorhus/github-markdown-css/gh-pages/github-markdown.css')
+    style(media='screen', type='text/css') .markdown-body { min-width: 200px; max-width: 800px; margin: 0 auto; padding: 30px; }
+  body
+    .markdown-body
+      include:markdown ../README.md
