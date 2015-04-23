@@ -1,7 +1,7 @@
 {
   "name": "sl-api",
   "description": "Wrapper for Storstockholms Lokaltrafiks (SL) public API:s",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Simon Johansson",
     "email": "mail@simon-johansson.com"
