@@ -186,7 +186,7 @@ $ npm test
 ```
 ## Why is this module needed?
 
-This is a convenience module that makes it easier to work with SLs API and attempts to iron out some of the quirks in the response data. For example, a response from the *Geometry* endpoint of the *Reseplanerare 2* API looks like this without the module:
+This is a convenience module that makes it easier to work with SLs API and attempts to iron out some of the quirks in the response data. For example, a response from the *Geometry* endpoint of the *Reseplanerare 2* API looks like this **without** the module:
 
 ```
 "Geometry": {
@@ -206,7 +206,7 @@ This is a convenience module that makes it easier to work with SLs API and attem
   }
 }
 ```
-But with the module you’ll get the array of points directly.
+Unnecessary wrapper objects surrounds the interesting part, the array of points. Using the module you’ll get the array of points directly.
 
 ## Can this module be used in the browser?
 
