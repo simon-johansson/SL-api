@@ -93,7 +93,7 @@ sl.locationLookup({searchstring: "tegnergatan"})
 ..or use a callback.
 
 ```js
-sl.locationLookup(function(err, results) {
+sl.locationLookup({searchstring: "tegnergatan"}, function(err, results) {
   if (err) {
     return console.error(err);
   }
@@ -210,7 +210,7 @@ Unnecessary wrapper objects surrounds the interesting part, the array of points.
 
 ## Can this module be used in the browser?
 
-No. The APIs does not support [JSON-P](https://kundo.se/org/trafiklabse/d/jsonp-cors/).
+No. The APIs does not support [JSON-P](https://kundo.se/org/trafiklabse/d/jsonp-cors/) or [CORS](http://kundo.se/org/trafiklabse/d/erbjuda-cors/).
 
 ## License
 
