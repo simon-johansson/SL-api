@@ -67,6 +67,6 @@
     "example": "npm run-script compile && node example/index.js",
     "precommit": "npm test",
     "prepush": "npm test",
-    "prepublish": "npm compile"
+    "prepublish": "npm run compile"
   }
 }
