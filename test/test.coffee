@@ -65,7 +65,7 @@ describe 'SL (Storstockholms Lokaltrafik) API Wrapper\n', ()->
       it 'should make request to realtimedepartures endpoint', (done) ->
         new SL(keys).realtimeInformation (err, data) ->
           url = request.get.args[0][0].url
-          expect(url).to.eql 'http://api.sl.se/api2/realtimedepartures.json?key=xxx'
+          expect(url).to.eql 'http://api.sl.se/api2/realtimedeparturesV4.json?key=xxx'
           done()
 
       it 'should return the response with right formatting', (done) ->
