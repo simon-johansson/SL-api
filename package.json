@@ -66,6 +66,7 @@
     "test": "mocha --compilers coffee:coffee-script/register -R spec",
     "example": "npm run-script compile && node example/index.js",
     "precommit": "npm test",
-    "prepush": "npm test"
+    "prepush": "npm test",
+    "prepublish": "npm compile"
   }
 }
