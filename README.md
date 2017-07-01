@@ -37,7 +37,7 @@ Initialize an API client using the keys for your project. You do not have to sup
 var SL = require('sl-api');
 
 var sl = new SL({
-  realtimeInformation: "<key for: SL Realtidsinformation 3>",
+  realtimeInformation: "<key for: SL Realtidsinformation 4>",
   locationLookup: "<key for: SL Platsuppslag>",
   tripPlanner: "<key for: SL Reseplanerare 2>",
   trafficSituation: "<key for: SL Trafikläget 2>",
@@ -105,7 +105,7 @@ sl.locationLookup({searchstring: "tegnergatan"}, function(err, results) {
 
 > Get realtime departure information about buses, metros, trains, trams and ships for the specified site. Response also includes disturbance information.
 
-Uses API key for [SL Realtidsinformation 3](https://www.trafiklab.se/api/sl-realtidsinformation-3)
+Uses API key for [SL Realtidsinformation 4](https://www.trafiklab.se/api/sl-realtidsinformation-4)
 
 ```js
 // example
