@@ -1,7 +1,7 @@
 {
   "name": "sl-api",
   "description": "Wrapper for Storstockholms Lokaltrafiks (SL) public API:s",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": {
     "name": "Simon Johansson",
     "email": "mail@simon-johansson.com"
@@ -66,6 +66,7 @@
     "test": "mocha --compilers coffee:coffee-script/register -R spec",
     "example": "npm run-script compile && node example/index.js",
     "precommit": "npm test",
-    "prepush": "npm test"
+    "prepush": "npm test",
+    "prepublish": "npm run compile"
   }
 }
